@@ -1,0 +1,22 @@
+.half{
+	width:50%;
+	height:100%;
+	float:left;
+}
+
+
+.vwhole{
+/*
+	height: 100%;
+	display:inline-block;
+	position:relative;
+*/
+}
+
+.vhalf{
+/*
+	width:100%;
+	display:inline-block;
+	height:50%;
+*/
+}

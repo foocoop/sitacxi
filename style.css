@@ -1,0 +1,186 @@
+/*
+Theme Name: sitac XI
+Aurthor: foocoop
+Author URI: http://foocoop.mx
+
+Template: foundation
+*/
+
+@import url("utilidades/foo.css");
+@import url("utilidades/foo_nuevas.css");
+
+/*
+color : #a38e62
+*/
+
+li {
+    list-style:none;
+}
+a {
+    color:#000;
+}
+a:hover{
+    color:#fff;
+    background-color:#a38e62;
+}
+html,body{
+    width:100%;
+    height:100%;
+}
+
+body {
+    font-size:13px;
+}
+
+div{
+    /* border:1px solid #00e3a3; */
+}
+
+#contenedor, #footer {
+    max-width: 90%;
+    width: 90%;
+    margin-left:5%;
+}
+
+#contenedor {
+    height:90%;
+}
+#footer{
+    text-align:center;
+}
+
+
+#contenedor > div {
+    height:90%;
+    display:inline-block;
+    overflow:auto;
+}
+
+#contenedor > div > div {
+    width:100%;
+    display:inline-block;
+    min-height:100px;
+}
+
+#header {
+    height:120px;
+
+}
+#header #logo{
+    height:120px;
+}
+#header .vhalf{
+    height:50%;
+}
+
+#header > div {
+    min-height:100px;
+}
+
+#header #logo{
+    height:auto;
+}
+
+#header #subtitulo {
+    padding:30px 0;
+
+    color:#a38e62;
+    font-size:16px;
+    font-weight:bold;
+
+}
+#header #subsubtitulo{
+    padding:10px 0;
+    text-transform:uppercase;
+    font-size:12px;
+}
+
+#menu {
+    height:25px;
+}
+
+#menu li {
+    display: inline-block;
+    width:20%;
+    text-align:center;
+}
+
+#menu li a {
+    color:white;
+}
+
+#principal{
+}
+
+#reader {
+    height:100%;
+    position:relative;
+}
+
+#reader .gdocsviewer {
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#reader iframe{
+    width:100%;
+
+    height:100%;
+}
+
+
+.qtrans_language_chooser {
+
+    width:100%;
+}
+
+.qtrans_language_chooser span {
+    background-color:#fff;
+    color:#000;
+}
+
+.qtrans_language_chooser li {
+
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 0 10px 0 0 ;
+}
+.qtrans_language_chooser li a {
+    color:#000;
+}
+.qtrans_language_chooser li.active {
+    color:#000;
+    font-weight:bold;
+}
+
+span h3 {
+    background-color:#a38e62;
+    color:#fff;
+}
+
+#contenido #eventos {
+
+} 
+
+
+.evento {
+    border-bottom: 2px dotted #aaa;
+    margin-bottom: 20px;
+} 
+.evento > div {
+    padding:3px 0;
+    width:100%;
+}
+.evento:hover {
+    background-color:#565656;
+    color:#fff;
+}
+.evento .fecha, .evento .tituloautor {
+    text-transform: uppercase;
+}
+.evento .masinfo{
+    text-align:right;
+}

@@ -1,0 +1,45 @@
+<?php
+/*
+Template Name: Programa
+*/
+
+get_header();
+
+// submenú compuesto de días:
+
+
+// obtener todos los eventos
+$eventos = array();
+$dias = array("Día 1", "Día 2", "Día 3");
+
+foreach($eventos as $evento) {
+  // encontrar su día
+  // si ya hay un arreglo para ese día, añadir evento a arreglo
+  // si no, crear arreglo por día y añadir evento
+}
+
+foreach($dias as $dia) {
+  $link = "http://localhost";
+  $diaslis .= foo_li("","dia", foo_link( $dia, $link ) );
+}
+
+
+$submenu = foo_ul("","submenu",$diaslis);
+$presentacion = "estar-los-unos";
+$contenido = "...";
+
+$submenu = foo_div("submenu", "", $submenu);
+$presentacion = foo_div("presentacion", "", $presentacion);
+$contenido = foo_div("contenido", "", $contenido);
+
+//~ $principal = $submenu . $presentacion . $contenido; 
+//~ 
+//~ $echo .= foo_div("","", $principal);
+
+//~ echo $echo;
+
+echo $submenu . $presentacion . $contenido; 
+
+get_footer();
+
+?>
