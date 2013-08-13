@@ -25,18 +25,18 @@ echo foo_close(); // #contenedor
 
 </body>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
 jQuery(document).ready(function($) {
-   var link = $('#reader a').html();
-   $('#reader a').gdocsViewer();
-   /* $('reader').PDFDoc( { source : '/home/furenku/chamba/web/proyectos/SITAC/SITAC12.pdf' } ); */
+var link = $('#reader a').html();
+$('#reader a').gdocsViewer();
+// $('reader').PDFDoc( { source : '/home/furenku/chamba/web/proyectos/SITAC/SITAC12.pdf' } );
 });
 
 
 //var $j = jQuery.noConflict();
 
 
-</script>
+</script> -->
 
 </html>
