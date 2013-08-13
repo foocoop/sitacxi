@@ -236,7 +236,36 @@ div{
     border-top:2px dotted #ddd;
 }
 
+#actividades {
+    border-top:2px dotted #ddd;
+}
 
+
+#actividades .actividad:hover,
+#actividades .actividad:hover a {
+    color:#fff;
+}
+
+
+
+#actividades .actividad .fecha{
+    font-weight:bold;
+}
+
+#actividades .actividad .fecha,
+#actividades .actividad .titulo{
+    text-transform:uppercase;
+    
+}
+#actividades .actividad {
+    padding:10px;
+    border-bottom:2px dotted #ddd;
+
+}
+#actividades .actividad > div {
+    padding:5px 0;
+    
+}
 
 
 article {
