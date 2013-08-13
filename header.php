@@ -82,6 +82,5 @@ qtrans_generateLanguageSelectCode('text');
 
 <nav id="menu" class="top-bar">
   <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_class' => 'left', 'container' => '', 'fallback_cb' => 'foundation_page_menu', 'walker' => new foundation_navigation() ) ); ?>
-  
 </nav>
 

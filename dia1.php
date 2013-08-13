@@ -29,18 +29,32 @@ $query = new WP_Query(array( 'post_type'=>'actividad','posts_per_page'=>-1 ) );
 if( $query->have_posts() ) {
   while ( $query->have_posts() ) {
     $query->the_post();
-    $titulo = $post->post_title;
+    $titulo = get_the_title();
     $link = get_permalink($post->ID);
     $fecha = get_post_meta($post->ID,'fecha');
     $fecha = $fecha[0];
     $hora_inicio = get_post_meta($post->ID,'hora_inicio');
     $hora_inicio = $hora_inicio[0];
-    
+
+    $participantes = get_post_meta($post->ID,'participantes');
+
+    $participantes = $participantes[0];
+    $participantesStr="";
+    foreach($participantes as $p ){
+      $participantesStr .= $p . " " ;
+      $link = get_page_by_title($p, 'OBJECT', 'invitado');
+      
+    }
     $hora_final = get_post_meta($post->ID,'hora_final');
     $hora_final = $hora_final[0];
     
     if($fecha == "08/29/2013") {
-      $actividades .= foo_li("","actividad",foo_div("","fecha", date( "d \d\e F" ,$fecha ) . $hora_inicio. " - " . $hora_final ). $titulo,$link);
+      setlocale(LC_ALL,"es_ES");
+      $actividades .= foo_li("","actividad",
+                             foo_div("","fecha", date( "F d", strtotime($fecha) ) ." ". $hora_inicio. " - " . $hora_final ) .
+                                                                        foo_div("","titulo", $titulo . " | <em>" . $participantesStr .'</em>') .
+                                                                                foo_div("","sede", "Cultural del Bosque" ),
+                             $link);
     }
   }
 }
