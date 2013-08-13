@@ -278,6 +278,9 @@ article {
     padding-top:30px;
 }
 
+article .contenido img {
+    width:100%;
+}
 
 #reader {
     position:relative;
