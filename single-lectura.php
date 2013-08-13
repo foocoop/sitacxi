@@ -49,7 +49,7 @@ get_header();
 
  jQuery(document).ready(function($) {
    var link = $('article .contenido a');
-   var reader = $("#reader");
+   var reader = $("#reader #reader");
    var newlink = link.detach();
    reader.html( newlink );
    newlink.gdocsViewer();

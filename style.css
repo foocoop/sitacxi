@@ -59,7 +59,7 @@ div{
     /* border:1px solid #00e3a3; */
 }
 
-#contenedor, #footer {
+#contenedor, #footer{
     max-width: 90%;
     width: 90%;
     margin-left:5%;
@@ -69,9 +69,14 @@ div{
     height:90%;
 }
 #footer{
+
     text-align:center;
 }
 
+
+footer {
+    border-top:1px dotted #ddd;
+}
 
 #contenedor > div {
     height:90%;
@@ -105,14 +110,15 @@ div{
 }
 
 #header #subtitulo {
-    padding:30px 0;
+    padding:15px 0;
 
     color:#000;
-    font-size:24px;
+    font-size:22px;
     font-weight:bold;
 
 }
 #header #subsubtitulo{
+    margin-top:20px;
     padding:10px 0;
     text-transform:uppercase;
     font-size:12px;
@@ -270,4 +276,51 @@ div{
 
 article {
     padding-top:30px;
+}
+
+
+#reader {
+    position:relative;
+    display:inline-block;
+    height:auto;
+}
+#reader > div  {
+    position:absolute;
+    display:inline-block;
+    width:auto;
+}
+#reader #estar {
+    width:15%;
+    
+    left:0;
+    top:15%;
+
+}
+#reader #losunos {
+    width:35%;
+    top: 0;
+    left:35%;
+}
+#reader #con {
+    top: 25%;
+    width:15%;
+    left:85%;
+}
+#reader #losotros {
+    bottom:0;
+    width:35%;
+    left:45%;
+}
+#reader #reader,
+    #reader #centro {
+    
+    height:70%;
+    width:70%;
+    top:15%;
+    left:15%;
+}
+
+#reader #centro img {
+    width:100%;
+    height:100%;
 }
