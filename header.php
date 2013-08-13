@@ -23,7 +23,7 @@
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width" />
 
-  <title><?php wp_title(); ?></title>
+  <title><?php wp_title(" - ",true,"right"); ?></title>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
 
