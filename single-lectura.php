@@ -50,7 +50,7 @@ get_header();
  jQuery(document).ready(function($) {
    var link = $('article .contenido a');
    var reader = $("#reader");
-   var newlink = link.clone();
+   var newlink = link.detach();
    reader.html( newlink );
    newlink.gdocsViewer();
    /* $('reader').PDFDoc( { source : '/home/furenku/chamba/web/proyectos/SITAC/SITAC12.pdf' } ); */
