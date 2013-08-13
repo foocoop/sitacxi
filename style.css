@@ -16,13 +16,36 @@ color : #a38e62
 li {
     list-style:none;
 }
+
+li:hover{
+    background-color:#000;
+}
+li:hover a {
+    color:white;
+}
+
+h2 {
+    font-size:2em !important;
+    font-weight:bold;
+}
+
+span {
+
+    width:auto;
+}
+span h3 {
+    background-color:#000;
+    color:#fff;
+}
+    
+
+
 a {
     color:#000;
 }
-a:hover{
-    color:#fff;
-    background-color:#a38e62;
-}
+/* a:hover{ */
+/*     color:#fff; */
+/* } */
 html,body{
     width:100%;
     height:100%;
@@ -84,8 +107,8 @@ div{
 #header #subtitulo {
     padding:30px 0;
 
-    color:#a38e62;
-    font-size:16px;
+    color:#000;
+    font-size:24px;
     font-weight:bold;
 
 }
@@ -96,16 +119,33 @@ div{
 }
 
 #menu {
-    height:25px;
+    height:30px;
 }
-
+#menu ul {
+    width:100%;
+}
 #menu li {
     display: inline-block;
     width:20%;
     text-align:center;
     float:left;
-    height:25px;
+    height:30px;
+    line-height:30px;
 }
+
+#submenu {
+    width:100%;
+    padding-bottom:15px;
+    border-bottom:2px solid #767676;
+}
+
+#submenu li {
+    font-size:16px:
+    width:auto !important;
+    padding:3px 15px;
+    
+}
+
 
 #menu li a {
     color:white;
@@ -158,10 +198,6 @@ div{
     font-weight:bold;
 }
 
-span h3 {
-    background-color:#a38e62;
-    color:#fff;
-}
 
 #contenido #eventos {
 
@@ -185,4 +221,24 @@ span h3 {
 }
 .evento .masinfo{
     text-align:right;
+}
+
+
+
+
+.invitado_actividad {
+    padding:5px 20px;
+
+    border-bottom:2px dotted #ddd;
+}
+
+.invitado_actividades {
+    border-top:2px dotted #ddd;
+}
+
+
+
+
+article {
+    padding-top:30px;
 }

@@ -39,7 +39,7 @@ if(!empty($post->post_parent)) {
         $submenu .= foo_li("","",$ttl,$url);
       }
 
-  echo $submenu;
+  echo foo_div("submenu","",$submenu);
 
 ?>
       

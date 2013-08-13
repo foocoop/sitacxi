@@ -44,7 +44,9 @@ echo themeDir();
 ?>/scripts/jquery-pdfdoc/jquery-pdfdoc.js"></script> -->
 
 <body <?php body_class(); ?>>
-  <?php global $template; echo $template;  ?>
+  <?php
+  // global $template; echo $template;
+  ?>
 <?php
 
 	
@@ -59,7 +61,7 @@ echo foo_open("","large-6 columns principal");
 
 <?php
 
-$logo = foo_img( themeDir()."/img/logo_sitac.png");
+$logo = foo_link( foo_img( themeDir()."/img/logo_sitac.png"), site_url() );
 $header = foo_div("logo", "half", $logo);
 $header = foo_div("logo", "half", $logo);
 $header .=	foo_div("descripcion", "half vwhole",

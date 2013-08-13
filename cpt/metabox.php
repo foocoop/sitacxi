@@ -4,9 +4,11 @@
 add_action('admin_init', 'foo_add_meta_boxes', 1);
 function foo_add_meta_boxes() {
   add_meta_box( 'fecha', 'Fecha', 'foo_fecha_meta_box', 'actividad', 'normal', 'default');
+  add_meta_box( 'hora', 'Hora', 'foo_hora_meta_box', 'actividad', 'normal', 'default');
+  add_meta_box( 'participantes', 'Participantes', 'foo_participantes_meta_box', 'actividad', 'normal', 'default');
   add_meta_box( 'url', 'URL', 'foo_url_meta_box', 'invitado', 'normal', 'default');
   add_meta_box( 'autor', 'Autor(a)', 'foo_autor_meta_box', 'lectura', 'normal', 'default');
-  add_meta_box( 'participantes', 'Participantes', 'foo_participantes_meta_box', 'actividad', 'normal', 'default');
+  
 }
 
 
@@ -35,7 +37,7 @@ function foo_fecha_meta_box() {
 
 <table>
   <tr>
-    <td style="width: 100%">until:</td>
+    <td style="width: 10%">fecha:</td>
     <td>
       <input type="text" name="fecha" id="post_fecha" value="<?php echo $fecha; ?>" /></td>
   </tr>
@@ -78,20 +80,73 @@ function foo_fecha_save($post_id) {
 
 
 
+function foo_hora_meta_box() {
+  global $post;
+
+  wp_nonce_field( 'foo_hora_nonce', 'foo_hora_nonce' );
+
+
+  $hora_inicio = get_post_meta( $post->ID, 'hora_inicio', true  );
+  $hora_final = get_post_meta( $post->ID, 'hora_final', true  );
+
+?>
+<table>
+  <tr>
+    <td style="width: 10%">hora inicio:</td>
+    <td style="width: 20%"><input type="text" name="hora_inicio" value="<?php echo $hora_inicio; ?>" /></td>
+    <td style="width: 10%">hora final:</td>
+    <td style="width: 20%"><input type="text" name="hora_final" value="<?php echo $hora_final; ?>" /></td>
+  </tr>
+</table>
+<?php
+}
+add_action('save_post', 'foo_hora_save');
+function foo_hora_save($post_id) {
+  if ( ! isset( $_POST['foo_hora_nonce'] ) ||
+      ! wp_verify_nonce( $_POST['foo_hora_nonce'], 'foo_hora_nonce' ) )
+  return;
+  
+  if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+  return;
+  
+  if (!current_user_can('edit_post', $post_id))
+  return;
+  
+  $old_inicio = get_post_meta($post_id, 'hora_inicio', true);
+  $old_final = get_post_meta($post_id, 'hora_final', true);
+  
+  $hora_inicio = $_POST['hora_inicio'];
+  $hora_final = $_POST['hora_final'];
+  
+  if ( $hora_inicio && $hora_final && $hora_inicio != $old_inicio && $hora_final != $old_final ) {
+    update_post_meta( $post_id, 'hora_inicio', $hora_inicio );
+    update_post_meta( $post_id, 'hora_final', $hora_final );
+  }
+  elseif ( !$hora && $old ){
+    delete_post_meta( $post_id, 'hora_inicio', $old_inicio );
+    delete_post_meta( $post_id, 'hora_final', $old_final );
+  }
+}
+
+
+
+
+
+
 
 function foo_autor_meta_box() {
   global $post;
 
   wp_nonce_field( 'foo_autor_nonce', 'foo_autor_nonce' );
 
-  $autor = get_post_meta( $post->ID, 'autorfecha', true  );
+  $autor = get_post_meta( $post->ID, 'autor', true  );
   
 ?>
  <table>
   <tr>
-    <td style="width: 100%">until:</td>
+    <td style="width: 10%">autor:</td>
     <td>
-      <input type="text" name="autor" class="autor" value="<?php echo autor; ?>" /></td>
+      <input type="text" name="autor" class="autor" value="<?php echo $autor; ?>" /></td>
   </tr>
 </table>
 <?php
@@ -142,14 +197,14 @@ function foo_url_meta_box() {
 
   wp_nonce_field( 'foo_url_nonce', 'foo_url_nonce' );
 
-  $url = get_post_meta( $post->ID, 'urlfecha', true  );
+  $url = get_post_meta( $post->ID, 'url', true  );
   
 ?>
 <table>
   <tr>
-    <td style="width: 100%">until:</td>
+    <td style="width: 10%">url:</td>
     <td>
-      <input type="text" name="url" class="url" value="<?php echo url; ?>" /></td>
+      <input type="text" name="url" class="url" value="<?php echo $url; ?>" /></td>
   </tr>
 </table>
 <?php
@@ -202,9 +257,7 @@ function foo_participantes_meta_box() {
   if( $invitados->have_posts() ) {
     while ( $invitados->have_posts() ) {
       $invitados->the_post();
-
       array_push( $arr, foo_filter( $post->post_title, 'title' ) );
-
     }
   }
 

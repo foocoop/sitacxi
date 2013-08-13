@@ -34,13 +34,13 @@ function cpt() {
 
   register_post_type( 'actividad',
                      array('labels' => array(
-      'name' => __('Actividads', 'Actividad general name'),
+      'name' => __('Actividades', 'Actividad general name'),
       'singular_name' => __('Actividad', 'Actividad singular name'),
       'add_new' => __('Nuevo', 'actividad type item'),
       'add_new_item' => __('Añadir Actividad'),
       'edit' => __( 'Editar' ),
-      'edit_item' => __('Editar Actividads'),
-      'new_item' => __('Actividad Nuevo'),
+      'edit_item' => __('Editar Actividades'),
+      'new_item' => __('Actividad Nueva'),
       'view_item' => __('Ver Actividad'),
       'search_items' => __('Buscar Actividad'),
       'not_found' =>  __('Nothing found in the Database.'),
