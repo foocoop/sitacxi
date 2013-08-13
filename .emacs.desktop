@@ -1,0 +1,117 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Tue Aug 13 01:28:37 2013
+;; Desktop file format version 206
+;; Emacs version 24.3.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("foo_participantes_nonce" "menu" "font-fa" "family" "230" "featfoo" "feat" "excer" ";" "indent" "split" "imgs" "columni" "rel=\"" "imgdir" "img"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/functions.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/cpt/cpt.php" "/home/furenku/chamba/web/footilities/metaboxes.php" "/home/furenku/chamba/web/vocal/cpt/metabox.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/cpt/metabox.php" "/home/furenku/chamba/web/sitacxi/wp-content/plugins/qtranslate/qtranslate.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/cpt/metabox.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/header.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/todo.txt" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/cpt/cpt.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/functions.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/programa.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/content-page.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/content.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/content-page.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/single.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/dia1.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/page.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/header.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/page.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/dia3.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/dia2.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/dia3.php" "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/dia2.php" "~/.emacs" "~/chamba/web/cartucho/wp-content/themes/cartucho/tiemposferales.php" "~/chamba/web/cartucho/wp-content/themes/cartucho/content-page.php" "~/chamba/web/cartucho/wp-content/themes/cartucho/tiemposferales.php" "~/chamba/web/cartucho/wp-content/themes/cartucho/single-articulo.php" "~/chamba/web/cartucho/wp-content/themes/cartucho/slider.html"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/functions.php"
+  "functions.php<3>"
+  'web-mode
+  '(linum-mode auto-indent-minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/cpt/cpt.php"
+  "cpt.php"
+  'web-mode
+  '(linum-mode auto-indent-minor-mode)
+  1126
+  '(1150 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/cpt/metabox.php"
+  "metabox.php"
+  'web-mode
+  '(linum-mode auto-complete-mode auto-indent-minor-mode)
+  4361
+  '(4447 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/todo.txt"
+  "todo.txt"
+  'text-mode
+  '(linum-mode)
+  168
+  '(168 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/programa.php"
+  "programa.php"
+  'web-mode
+  '(linum-mode auto-indent-minor-mode)
+  1221
+  '(1434 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/content.php"
+  "content.php"
+  'web-mode
+  '(linum-mode auto-indent-minor-mode)
+  651
+  '(518 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/dia1.php"
+  "dia1.php"
+  'web-mode
+  '(linum-mode auto-indent-minor-mode)
+  1
+  '(78 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/furenku/chamba/web/sitacxi/wp-content/themes/sitacxi/dia3.php"
+  "dia3.php"
+  'web-mode
+  '(linum-mode auto-indent-minor-mode)
+  1
+  '(1 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/furenku/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  '(linum-mode auto-complete-mode auto-indent-minor-mode)
+  3098
+  '(3009 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+

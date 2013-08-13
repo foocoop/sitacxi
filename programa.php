@@ -43,11 +43,19 @@ foreach($dias as $dia) {
 }
 
 
-$submenu = foo_ul("","submenu",$diaslis);
+$submenu = foo_ul("submenu","",$diaslis);
 $presentacion = "<span><h3>estar-los-unos-con-los-otros</h3></span>";
 $presentacion .= "29, 30 y 31 de agosto, 2013. Polyforum Siqueiros Ciudad de México";
 $contenido = "...";
 
+
+$pgs = get_pages( array('child_of'=>$post->ID ) );
+$submenu = "";
+foreach ( $pgs as $p ) {
+  $ttl = foo_filter( $p->post_title, 'title');;
+  $url = get_permalink( $p->ID );
+  $submenu .= foo_li("","",$ttl,$url);
+}
 
 
 $submenu = foo_div("submenu", "", $submenu);
@@ -63,5 +71,6 @@ $contenido = foo_div("contenido", "", $eventos);
 echo $submenu . $presentacion . $contenido; 
 
 get_footer();
+
 
 ?>

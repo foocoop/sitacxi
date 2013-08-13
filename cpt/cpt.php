@@ -1,176 +1,100 @@
 <?php
 
-function cpt() { 
-	register_post_type( 'articulo',
-		array('labels' => array(
-			'name' => __('Artículos', 'Artículo general name'),
-			'singular_name' => __('Artículo', 'Artículo singular name'),
-			'add_new' => __('Nuevo', 'articulo type item'),
-			'add_new_item' => __('Añadir Artículo'),
-			'edit' => __( 'Editar' ),
-			'edit_item' => __('Editar Artículos'),
-			'new_item' => __('Artículo Nuevo'),
-			'view_item' => __('Ver Artículo'),
-			'search_items' => __('Buscar Artículo'),
-			'not_found' =>  __('Nothing found in the Database.'),
-			'not_found_in_trash' => __('Nothing found in Trash'),
-			'parent_item_colon' => ''
-			),
-			'description' => __( '' ),
-			'public' => true,
-			'publicly_queryable' => true,
-			'exclude_from_search' => false,
-			'show_ui' => true,
-			'menu_position' => 8,
-			'query_var' => true,
-			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png',
-			'rewrite' => true,
-			'capability_type' => 'post',
-			'hierarchical' => false,
-			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'sticky'),
-			'has_archive' => true	 	)
-	);
-	register_taxonomy_for_object_type('numero', 'articulo');
-	register_taxonomy_for_object_type('seccion', 'articulo');
-
-	
-	register_post_type( 'numero',
-		array('labels' => array(
-			'name' => __('Números', 'Número general name'),
-			'singular_name' => __('Número', 'Número singular name'),
-			'add_new' => __('Nuevo', 'numero type item'),
-			'add_new_item' => __('Añadir Número'),
-			'edit' => __( 'Editar' ),
-			'edit_item' => __('Editar Números'),
-			'new_item' => __('Número Nuevo'),
-			'view_item' => __('Ver Número'),
-			'search_items' => __('Buscar Número'),
-			'not_found' =>  __('Nothing found in the Database.'),
-			'not_found_in_trash' => __('Nothing found in Trash'),
-			'parent_item_colon' => ''
-			),
-			'description' => __( '' ),
-			'public' => true,
-			'publicly_queryable' => true,
-			'exclude_from_search' => false,
-			'show_ui' => true,
-			'menu_position' => 8,
-			'query_var' => true,
-			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png',
-			'rewrite' => true,
-			'capability_type' => 'post',
-			'hierarchical' => false,
-			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'sticky'),
-			'has_archive' => true	 	)
-	);
-	
-	register_post_type( 'numero_anterior',
-		array('labels' => array(
-			'name' => __('Números anteriores', 'Número anterior general name'),
-			'singular_name' => __('Número anterior', 'Número anterior singular name'),
-			'add_new' => __('Nuevo', 'numero_anterior type item'),
-			'add_new_item' => __('Añadir Número anterior'),
-			'edit' => __( 'Editar' ),
-			'edit_item' => __('Editar Números anteriores'),
-			'new_item' => __('Número anterior Nuevo'),
-			'view_item' => __('Ver Número anterior'),
-			'search_items' => __('Buscar Número anterior'),
-			'not_found' =>  __('Nothing found in the Database.'),
-			'not_found_in_trash' => __('Nothing found in Trash'),
-			'parent_item_colon' => ''
-			),
-			'description' => __( '' ),
-			'public' => true,
-			'publicly_queryable' => true,
-			'exclude_from_search' => false,
-			'show_ui' => true,
-			'menu_position' => 8,
-			'query_var' => true,
-			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png',
-			'rewrite' => true,
-			'capability_type' => 'post',
-			'hierarchical' => false,
-			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'sticky'),
-			'has_archive' => true	 	)
-	);
-	
-	register_post_type( 'seccion',
-		array('labels' => array(
-			'name' => __('Secciones', 'Sección general name'),
-			'singular_name' => __('Sección', 'Sección singular name'),
-			'add_new' => __('Nuevo', 'seccion type item'),
-			'add_new_item' => __('Añadir Sección'),
-			'edit' => __( 'Editar' ),
-			'edit_item' => __('Editar Secciones'),
-			'new_item' => __('Sección Nueva'),
-			'view_item' => __('Ver Sección'),
-			'search_items' => __('Buscar Sección'),
-			'not_found' =>  __('Nothing found in the Database.'),
-			'not_found_in_trash' => __('Nothing found in Trash'),
-			'parent_item_colon' => ''
-			),
-			'description' => __( '' ),
-			'public' => true,
-			'publicly_queryable' => true,
-			'exclude_from_search' => false,
-			'show_ui' => true,
-			'menu_position' => 8,
-			'query_var' => true,
-			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png',
-			'rewrite' => true,
-			'capability_type' => 'post',
-			'hierarchical' => false,
-			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'sticky'),
-			'has_archive' => true	 	)
-	);
-	register_taxonomy_for_object_type('numero', 'seccion');
-
-	
-} 
-
-	add_action( 'init', 'cpt');
+function cpt() {
+  register_post_type( 'invitado',
+		     array('labels' => array(
+      'name' => __('Invitados', 'Invitado general name'),
+      'singular_name' => __('Invitado', 'Invitado singular name'),
+      'add_new' => __('Nuevo', 'invitado type item'),
+      'add_new_item' => __('Añadir Invitado'),
+      'edit' => __( 'Editar' ),
+      'edit_item' => __('Editar Invitados'),
+      'new_item' => __('Invitado Nuevo'),
+      'view_item' => __('Ver Invitado'),
+      'search_items' => __('Buscar Invitado'),
+      'not_found' =>  __('Nothing found in the Database.'),
+      'not_found_in_trash' => __('Nothing found in Trash'),
+      'parent_item_colon' => ''
+    ),
+			   'description' => __( '' ),
+			   'public' => true,
+			   'publicly_queryable' => true,
+			   'exclude_from_search' => false,
+			   'show_ui' => true,
+			   'menu_position' => 8,
+			   'query_var' => true,
+			   'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png',
+			   'rewrite' => true,
+			   'capability_type' => 'post',
+			   'hierarchical' => false,
+			   'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'sticky'),
+			   'has_archive' => true	 	)
+	             );
 
 
+  register_post_type( 'actividad',
+                     array('labels' => array(
+      'name' => __('Actividads', 'Actividad general name'),
+      'singular_name' => __('Actividad', 'Actividad singular name'),
+      'add_new' => __('Nuevo', 'actividad type item'),
+      'add_new_item' => __('Añadir Actividad'),
+      'edit' => __( 'Editar' ),
+      'edit_item' => __('Editar Actividads'),
+      'new_item' => __('Actividad Nuevo'),
+      'view_item' => __('Ver Actividad'),
+      'search_items' => __('Buscar Actividad'),
+      'not_found' =>  __('Nothing found in the Database.'),
+      'not_found_in_trash' => __('Nothing found in Trash'),
+      'parent_item_colon' => ''
+    ),
+                           'description' => __( '' ),
+                           'public' => true,
+                           'publicly_queryable' => true,
+                           'exclude_from_search' => false,
+                           'show_ui' => true,
+                           'menu_position' => 8,
+                           'query_var' => true,
+                           'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png',
+                           'rewrite' => true,
+                           'capability_type' => 'post',
+                           'hierarchical' => false,
+                           'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'sticky'),
+                           'has_archive' => true                )
+                     ); 
 
+  register_post_type( 'lectura',
+                     array('labels' => array(
+      'name' => __('Lecturas', 'Lectura general name'),
+      'singular_name' => __('Lectura', 'Lectura singular name'),
+      'add_new' => __('Nuevo', 'lectura type item'),
+      'add_new_item' => __('Añadir Lectura'),
+      'edit' => __( 'Editar' ),
+      'edit_item' => __('Editar Lecturas'),
+      'new_item' => __('Lectura Nuevo'),
+      'view_item' => __('Ver Lectura'),
+      'search_items' => __('Buscar Lectura'),
+      'not_found' =>  __('Nothing found in the Database.'),
+      'not_found_in_trash' => __('Nothing found in Trash'),
+      'parent_item_colon' => ''
+    ),
+                           'description' => __( '' ),
+                           'public' => true,
+                           'publicly_queryable' => true,
+                           'exclude_from_search' => false,
+                           'show_ui' => true,
+                           'menu_position' => 8,
+                           'query_var' => true,
+                           'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png',
+                           'rewrite' => true,
+                           'capability_type' => 'post',
+                           'hierarchical' => false,
+                           'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'sticky'),
+                           'has_archive' => true                )
+                     ); 
 
-    register_taxonomy( 'numero', 
-    	array('articulo'),
-    	array('hierarchical' => true,
-    		'labels' => array(
-    			'name' => __( 'Número ' ),
-    			'singular_name' => __( 'Número' ),
-    			'search_items' =>  __( 'Buscar número' ),
-    			'all_items' => __( 'Todos los números' ),
-    			'parent_item' => __( 'Número superior' ),
-    			'parent_item_colon' => __( 'Número superior:' ),
-    			'edit_item' => __( 'Editar número ' ),
-    			'update_item' => __( 'Actualizar número' ),
-    			'add_new_item' => __( 'Añadir números' ),
-    			'new_item_name' => __( 'Nombre de número nuevo' )
-    		),
-    		'show_ui' => true,
-    		'query_var' => true,
-    	)
-    );   
-		
-    register_taxonomy( 'seccion', 
-    	array('articulo'),
-    	array('hierarchical' => true,
-    		'labels' => array(
-    			'name' => __( 'Sección ' ),
-    			'singular_name' => __( 'Sección' ),
-    			'search_items' =>  __( 'Buscar sección' ),
-    			'all_items' => __( 'Todos los secciones' ),
-    			'parent_item' => __( 'Sección superior' ),
-    			'parent_item_colon' => __( 'Sección superior:' ),
-    			'edit_item' => __( 'Editar sección ' ),
-    			'update_item' => __( 'Actualizar sección' ),
-    			'add_new_item' => __( 'Añadir secciones' ),
-    			'new_item_name' => __( 'Nombre de sección nuevo' )
-    		),
-    		'show_ui' => true,
-    		'query_var' => true,
-    	)
-    );   
+}
+                
+add_action( 'init', 'cpt');
+
 
 ?>

@@ -29,6 +29,8 @@
 
   <?php
   /* wp_enqueue_script("jquery"); */
+  wp_enqueue_script( 'jquery-ui-datepicker' );
+  wp_enqueue_style( 'jquery-ui-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/smoothness/jquery-ui.css', true);
   wp_head(); 
   ?>
 
@@ -42,7 +44,7 @@ echo themeDir();
 ?>/scripts/jquery-pdfdoc/jquery-pdfdoc.js"></script> -->
 
 <body <?php body_class(); ?>>
-
+  <?php global $template; echo $template;  ?>
 <?php
 
 	
@@ -77,6 +79,7 @@ qtrans_generateLanguageSelectCode('text');
 
 
 <nav id="menu" class="top-bar">
-	<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_class' => 'left', 'container' => '', 'fallback_cb' => 'foundation_page_menu', 'walker' => new foundation_navigation() ) ); ?>
-	</section>
+  <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_class' => 'left', 'container' => '', 'fallback_cb' => 'foundation_page_menu', 'walker' => new foundation_navigation() ) ); ?>
+  
 </nav>
+
