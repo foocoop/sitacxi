@@ -62,10 +62,18 @@ echo themeDir();
 
 echo foo_open("contenedor","row");
 
-echo foo_open("","large-6 columns principal");
+
 
 ?>
 
+  
+  <?php
+  echo foo_open("","large-6 columns principal");
+  echo foo_open("headerfijo","");
+  ?>
+
+
+  
 <header class="site-header" <?php $header_image = get_header_image(); if ( ! empty( $header_image ) ) : ?> style="background:url('<?php echo esc_url( $header_image ); ?>');" <?php endif; ?>>
 
 <?php
@@ -84,12 +92,19 @@ echo $header;
 qtrans_generateLanguageSelectCode('text');
 
 ?>
-
+  
 </header>
-
 
 
 <nav id="menu" class="top-bar">
   <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_class' => 'left', 'container' => '', 'fallback_cb' => 'foundation_page_menu', 'walker' => new foundation_navigation() ) ); ?>
 </nav>
+
+<?php
+
+echo foo_close();
+
+
+echo foo_open("scroller","");
+?>
 

@@ -1,6 +1,7 @@
 <?php
 
 echo foo_close();
+echo foo_close();
 
 $reader .= foo_div("estar", "", foo_img( themeDir()."/img/reader/estar.png") );
 $reader .= foo_div("losunos","", foo_img( themeDir()."/img/reader/losunos.png"));
@@ -34,8 +35,12 @@ echo foo_close(); // #contenedor
 <script type="text/javascript">
 
  jQuery(document).ready(function($) {
+
+   setup_scroll();
+   
    var titulo = $('.campo .titulo');
 
+   
    titulo.click(function(){
      var contenido = $(this).next();
      var visible = contenido.is(':visible');
@@ -51,8 +56,24 @@ echo foo_close(); // #contenedor
    });
  });
 
+ var setup_scroll = function(){   
+   var principal = $('.principal');
+   var header = $('.principal #headerfijo');
+   var scroller = $('.principal #scroller');
 
- //var $j = jQuery.noConflict();
+   var newH = principal.height() - header.height();
+   newH *= 0.95;
+
+   scroller.height(newH);
+
+ }
+ var resizeTimer;
+ $(window).resize(function() {
+   clearTimeout(resizeTimer);
+   resizeTimer = setTimeout( setup_scroll, 50);
+ });
+
+ 
 
 
 </script>
