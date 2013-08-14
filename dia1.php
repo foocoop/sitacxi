@@ -25,7 +25,7 @@ foreach ( $pgs as $p ) {
 $submenu = foo_div("submenu", "", $submenu);
 
 
-$query = new WP_Query(array( 'post_type'=>'actividad','posts_per_page'=>-1 ) );
+$query = new WP_Query(array( 'post_type'=>'actividad','posts_per_page'=>-1, 'order'=>'ASC' ) );
 if( $query->have_posts() ) {
   while ( $query->have_posts() ) {
     $query->the_post();
