@@ -386,3 +386,17 @@ iframe {
 #page-53 img {
     width: auto !important;
 }
+
+
+
+#presentacion {
+    padding:30px 10px;
+    border-bottom: 2px dotted #ccc;
+    margin-bottom: 30px;
+    
+}
+
+#presentacion h3,
+#presentacion span {
+    width:60%;
+}
