@@ -40,8 +40,12 @@ if( $query->have_posts() ) {
 
     $participantes = $participantes[0];
     $participantesStr="";
+    $i = 0;
+    $l = count($participantes);
     foreach($participantes as $p ){
-      $participantesStr .= $p . " " ;
+      $i++;
+      $participantesStr .= $p;
+      if( $i < $l ) $participantesStr .= ", " ;
       $link_participante = get_page_by_title($p, OBJECT, 'invitado');
       
     }
