@@ -63,6 +63,11 @@ body {
     font-family: 'liberation_sansregular', Arial, sans-serif;
 }
 
+ul {
+    margin:0;
+    margin-bottom:0 !important;
+}
+
 li, h1, h2, h3, h4, h5, h6 {
     font-family: 'florencesans',Futura, "Trebuchet MS", Arial, sans-serif;
 }
@@ -366,12 +371,19 @@ article .contenido img {
     left:45%;
 }
 
-#reader #reader,
+
 #reader #centro {
     height:80%;
     width:80%;
     top:10%;
     left:10%;
+}
+
+#reader #reader{
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
 }
 
 #reader #centro img {
