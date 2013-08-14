@@ -12,7 +12,7 @@
 get_header(); ?>
 
     <!-- Main Content -->
-    <div class="large-9 columns" role="main">
+    <div class="large-12 columns" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -25,5 +25,5 @@ get_header(); ?>
     </div>
     <!-- End Main Content -->
 
-<?php get_sidebar(); ?>
+    
 <?php get_footer(); ?>

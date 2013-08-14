@@ -3,7 +3,7 @@
 get_header(); ?>
 
 
-<div class="large-9 columns" role="main">
+<div class="large-12 columns" role="main">
 
   <?php
   $programaID = 15;
