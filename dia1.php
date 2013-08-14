@@ -42,7 +42,7 @@ if( $query->have_posts() ) {
     $participantesStr="";
     foreach($participantes as $p ){
       $participantesStr .= $p . " " ;
-      $link = get_page_by_title($p, 'OBJECT', 'invitado');
+      $link_participante = get_page_by_title($p, 'OBJECT', 'invitado');
       
     }
     $hora_final = get_post_meta($post->ID,'hora_final');
@@ -50,11 +50,19 @@ if( $query->have_posts() ) {
     
     if($fecha == "08/29/2013") {
       setlocale(LC_ALL,"es_ES");
-      $actividades .= foo_li("","actividad",
-                             foo_div("","fecha", date( "F d", strtotime($fecha) ) ." ". $hora_inicio. " - " . $hora_final ) .
-                                                                        foo_div("","titulo", $titulo . " | <em>" . $participantesStr .'</em>') .
-                                                                                foo_div("","sede", "Cultural del Bosque" ),
-                             $link);
+
+      
+      $actividades .=
+      foo_li("","actividad",
+             foo_div("","fecha",
+                     date( "F d", strtotime($fecha) )
+                                           ." ". $hora_inicio
+                                           . " - " . $hora_final )
+                                           . foo_div("","titulo", $titulo
+                                                    . " | <em>"
+                                                    . $participantesStr .'</em>')
+                                                    . foo_div("","sede", "Cultural del Bosque" ),
+             $link);
     }
   }
 }

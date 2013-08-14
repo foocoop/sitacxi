@@ -6,18 +6,17 @@ get_header(); ?>
 <div class="large-9 columns" role="main">
 
   <?php
+  $programaID = 15;
+  $pgs = get_pages( array('child_of'=>$programaID ) );
+  
   $submenu = "";
-  $invitados = new WP_Query(array( 'post_type'=>'invitado','posts_per_page'=>-1 ) );
-  if( $invitados->have_posts() ) {
-    while ( $invitados->have_posts() ) {
-      $invitados->the_post();
-      $ttl = foo_filter( $post->post_title, 'title');;
-      $url = get_permalink( $post->ID );
-      $submenu .= foo_li("","",$ttl,$url);
-    }
+  foreach ( $pgs as $p ) {
+    $ttl = foo_filter( $p->post_title, 'title');;
+    $url = get_permalink( $p->ID );
+    $submenu .= foo_li("","",$ttl,$url);
   }
 
-  $submenu = foo_div("submenu", "", foo_ul("","large-block-grid-3", $submenu));
+  $submenu = foo_div("submenu", "", foo_ul("","", $submenu));
   
   echo $submenu;
 

@@ -73,7 +73,9 @@ div{
     text-align:center;
 }
 
-
+.top-bar {
+    margin-bottom:1.0em;
+}
 footer {
     border-top:1px dotted #ccc;
 }
@@ -141,14 +143,14 @@ footer {
 
 #submenu {
     width:100%;
-    padding-bottom:15px;
+    padding:0;
     border-bottom:2px solid #767676;
 }
 
 #submenu li {
     font-size:16px:
     width:auto !important;
-    padding:3px 15px;
+    padding:0 5px;
     
 }
 
@@ -268,6 +270,7 @@ footer {
     border-bottom:2px dotted #ccc;
 
 }
+#actividades .actividad > a > div,
 #actividades .actividad > div {
     padding:5px 0;
     
@@ -275,7 +278,7 @@ footer {
 
 
 article {
-    padding-top:30px;
+    padding-top:15px;
 }
 
 article .contenido img {
@@ -296,7 +299,7 @@ article .contenido img {
     width:10%;
     
     left:0;
-    top:15%;
+    top:25%;
 
 }
 #reader #losunos {
@@ -305,20 +308,21 @@ article .contenido img {
     left:35%;
 }
 #reader #con {
-    top: 65%;
+    top: 55%;
     width: 10%;
     left: 90%;
 }
 #reader #losotros {
-    top:90%;
+    top:85%;
     width:35%;
+    height:5%;
     left:45%;
 }
 
 #reader #reader,
 #reader #centro {
     
-    height:80%;
+    height:75%;
     width:80%;
     top:10%;
     left:10%;

@@ -35,11 +35,11 @@ get_header();
         while ( $actividades->have_posts() ) {
           $actividades->the_post();
           $actividad = $post->post_title;
-          $actividad_link = get_permalink($post->ID);
+          $link = get_permalink($post->ID);
           $participantes = get_post_meta($post->ID,'participantes');
-          foreach($participantes[0] as $p){
+          $link = get          foreach($participantes[0] as $p){
             if($p == $nombre){
-              array_push( $arr, $actividad );
+              array_push( $arr, $actividad, $link );
             }
           }
         }
