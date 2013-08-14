@@ -189,7 +189,10 @@ footer {
 #submenu li {
     font-size:16px:
     width:auto !important;
-    padding:5px;
+    padding:2px 5px !important;
+    height:15px;
+    line-height:15px;
+    margin:0;
     
 }
 
