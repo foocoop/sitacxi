@@ -55,7 +55,8 @@ if( $query->have_posts() ) {
       $actividades .=
       foo_li("","actividad",
              foo_div("","hora", $hora_inicio . " - " . $hora_final )
-                    . foo_div("","titulo", $titulo . " | <em>" . $participantesStr .'</em>')
+                    . foo_div("","titulo", $titulo )
+             . foo_div("","participantes", $participantesStr)
              , $link);
     }
   }

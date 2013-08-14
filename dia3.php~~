@@ -1,9 +1,8 @@
 <?php
 //Template Name: Dia 3
-
+$fecha_dia = "08/31/2013";
 
 get_header();
-
 
 
 $contenido = get_the_content();
@@ -52,15 +51,13 @@ if( $query->have_posts() ) {
       
     }
 
-    
-    if($fecha == "08/31/2013") {
-      $fecha = date_i18n( "F d", strtotime($fecha) );
-      $actividades = foo_div("","fecha", date_i18n( "F d", $fecha ) );
-      
+    if( strtotime($fecha) == strtotime($fecha_dia) ) {
+
       $actividades .=
       foo_li("","actividad",
              foo_div("","hora", $hora_inicio . " - " . $hora_final )
-                    . foo_div("","titulo", $titulo . " | <em>" . $participantesStr .'</em>')
+                    . foo_div("","titulo", $titulo )
+                             . foo_div("","participantes", $participantesStr )
              , $link);
     }
   }
@@ -69,6 +66,7 @@ if( $query->have_posts() ) {
 
 echo $submenu;
 
+echo foo_div("fecha","", date_i18n( "F d", strtotime($fecha_dia) ) );
 echo foo_div("actividades","",$actividades);
 
 get_footer();
