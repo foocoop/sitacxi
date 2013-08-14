@@ -1,13 +1,7 @@
 <?php
-/**
- * Single
- *
- * Loop container for single post content
- *
- * @package WordPress
- * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 4.0
- */
+/*
+Template Name: Educativo
+*/
 
 get_header(); ?>
 
