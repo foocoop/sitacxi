@@ -29,7 +29,7 @@ $query = new WP_Query(array( 'post_type'=>'actividad','posts_per_page'=>-1 ) );
 if( $query->have_posts() ) {
   while ( $query->have_posts() ) {
     $query->the_post();
-    $titulo = get_the_title();
+    $titulo = foo_filter( get_the_title(), 'title');
     $link = get_permalink($post->ID);
     $fecha = get_post_meta($post->ID,'fecha');
     $fecha = $fecha[0];
@@ -42,7 +42,7 @@ if( $query->have_posts() ) {
     $participantesStr="";
     foreach($participantes as $p ){
       $participantesStr .= $p . " " ;
-      $link_participante = get_page_by_title($p, 'OBJECT', 'invitado');
+      $link_participante = get_page_by_title($p, OBJECT, 'invitado');
       
     }
     $hora_final = get_post_meta($post->ID,'hora_final');

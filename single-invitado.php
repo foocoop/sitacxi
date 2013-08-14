@@ -34,12 +34,12 @@ get_header();
       if( $actividades->have_posts() ) {
         while ( $actividades->have_posts() ) {
           $actividades->the_post();
-          $actividad = $post->post_title;
+          $actividad = get_the_title();
           $link = get_permalink($post->ID);
           $participantes = get_post_meta($post->ID,'participantes');
-          $link = get          foreach($participantes[0] as $p){
+           foreach($participantes[0] as $p){
             if($p == $nombre){
-              array_push( $arr, $actividad, $link );
+              array_push( $arr, foo_link( $actividad, $link ) );
             }
           }
         }
@@ -47,7 +47,7 @@ get_header();
       wp_reset_query();
       $lis = "";
       foreach($arr as $a) {
-        $lis .= foo_li("","invitado_actividad",$a, $actividad_link);
+        $lis .= foo_li("","invitado_actividad",$a, $link);
       }
 
       echo foo_ul("","invitado_actividades",$lis);

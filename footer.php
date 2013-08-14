@@ -35,7 +35,8 @@ echo foo_close(); // #contenedor
 
  jQuery(document).ready(function($) {
    var titulo = $('.campo .titulo');
-   var principal = $('#principal');
+   var principal = $('#contenedor .principal');
+   principal.tinyscrollbar();
 
    titulo.click(function(){
      var contenido = $(this).next();
@@ -48,7 +49,6 @@ echo foo_close(); // #contenedor
      $(this).parent().siblings().find('.contenido').fadeOut();
 
 
-     principal.scroll()
      
    });
  });

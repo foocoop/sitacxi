@@ -23,19 +23,22 @@ get_header(); ?>
   if( have_posts() ) {
     while( have_posts() ) {
       the_post();
-      $titulo = foo_h( get_the_title(), 2);
-      $contenido = get_the_content();
+      $titulo = foo_h( foo_filter( get_the_title(), 'title'), 2);
+      $contenido = foo_filter( get_the_content(), 'content');
       $participantes = get_post_meta(get_the_ID(),'participantes');     
       $participantes = $participantes[0];
       $pstr = "";
       $i=0;
       $l = count($participantes);
       foreach( $participantes as $p ) {
-        $i++;        
-        $pstr .= $p;
+        $i++;
+        
+        $qtrans = '<!--:en-->'.$p.'<!--:--><!--:es-->'.$p.'<!--:-->';
+        $link_participante = get_permalink( get_page_by_title( $qtrans , OBJECT, 'invitado' ) -> ID );
+        $pstr .= foo_link( $p, $link_participante );
         if ( $i < $l ) {
           $pstr .= ", ";
-        }
+        }        
       }
       $pstr = foo_h( $pstr, 4 );
 

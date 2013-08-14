@@ -39,6 +39,15 @@
 <script type="text/javascript" src="<?php
                                     echo themeDir();
                                     ?>/scripts/gdocsviewer/jquery.gdocsviewer.js"></script>
+
+<script type="text/javascript" src="<?php
+                                    echo themeDir();
+                                    ?>/scripts/jquery.tinyscrollbar.min.js"></script>
+
+<script type="text/javascript" src="<?php
+                                    echo themeDir();
+                                    ?>/scripts/jquery-scroll/jquery.scroll.min.js"></script>
+
 <!-- <script type="text/javascript" src="<?php
 echo themeDir();
 ?>/scripts/jquery-pdfdoc/jquery-pdfdoc.js"></script> -->
