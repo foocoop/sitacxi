@@ -35,8 +35,6 @@ echo foo_close(); // #contenedor
 
  jQuery(document).ready(function($) {
    var titulo = $('.campo .titulo');
-   var principal = $('#contenedor .principal');
-   principal.tinyscrollbar();
 
    titulo.click(function(){
      var contenido = $(this).next();
