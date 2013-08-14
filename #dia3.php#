@@ -1,10 +1,10 @@
 <?php
-//Template Name: Dia 2
+//Template Name: Dia 3
 
 
 get_header();
 
-$fecha_dia = "08/30/2013";
+
 
 $contenido = get_the_content();
 
@@ -25,6 +25,7 @@ foreach ( $pgs as $p ) {
 
 $submenu = foo_div("submenu", "", $submenu);
 
+$fecha_dia = 
 
 $query = new WP_Query(array( 'post_type'=>'actividad','posts_per_page'=>-1, 'order'=>'ASC' ) );
 if( $query->have_posts() ) {
@@ -52,8 +53,11 @@ if( $query->have_posts() ) {
       
     }
 
-    if($fecha == $fecha_dia ) {
-
+    
+    if($fecha == "08/31/2013") {
+      $fecha = date_i18n( "F d", strtotime($fecha) );
+      $actividades = foo_div("","fecha", date_i18n( "F d", $fecha ) );
+      
       $actividades .=
       foo_li("","actividad",
              foo_div("","hora", $hora_inicio . " - " . $hora_final )
@@ -66,7 +70,6 @@ if( $query->have_posts() ) {
 
 echo $submenu;
 
-echo foo_div("fecha","", date_i18n( "F d", strtotime($fecha_dia) ) );
 echo foo_div("actividades","",$actividades);
 
 get_footer();

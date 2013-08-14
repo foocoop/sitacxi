@@ -35,7 +35,6 @@ get_header(); ?>
       $participantes = $participantes[0];
       $fecha = get_post_meta($post->ID,'fecha');
       $fecha = $fecha[0];
-      setlocale(LC_ALL,"es_ES");
       $fecha = date_i18n( "F d", strtotime($fecha) );
       $hora_inicio = get_post_meta($post->ID,'hora_inicio');
       $hora_inicio = $hora_inicio[0];

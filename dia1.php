@@ -4,7 +4,7 @@
 
 get_header();
 
-
+$fecha_dia = "08/29/2013";
 
 $contenido = get_the_content();
 
@@ -52,12 +52,11 @@ if( $query->have_posts() ) {
       
     }
 
-    if($fecha == "08/29/2013") {
+    if($fecha == $dia ) {
 
-      $fecha = date_i18n( "F d", $fecha );
       $actividades .=
       foo_li("","actividad",
-             foo_div("","fecha", $fecha ." ". $hora_inicio . " - " . $hora_final )
+             foo_div("","hora", $hora_inicio . " - " . $hora_final )
                     . foo_div("","titulo", $titulo . " | <em>" . $participantesStr .'</em>')
              , $link);
     }
@@ -67,6 +66,7 @@ if( $query->have_posts() ) {
 
 echo $submenu;
 
+echo foo_div("fecha","", date_i18n( "F d", strtotime($fecha_dia) ) );
 echo foo_div("actividades","",$actividades);
 
 get_footer();
