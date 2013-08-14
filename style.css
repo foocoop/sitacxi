@@ -254,7 +254,7 @@ footer {
 
 .qtrans_language_chooser span {
     background-color:#fff;
-    color:#000;
+    color:#777;
 }
 
 .qtrans_language_chooser li {
@@ -264,7 +264,7 @@ footer {
     margin: 0 10px 0 0 ;
 }
 .qtrans_language_chooser li a {
-    color:#aaa;
+    color:#777 !important;
 }
 .qtrans_language_chooser li.active {
     color:#000;
