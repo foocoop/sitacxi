@@ -380,7 +380,8 @@ iframe {
     display:none;
 }
 
-.page img {
+#page-45 img,
+#page-53 img {
     width: auto !important;
 }
 
