@@ -30,4 +30,28 @@ echo foo_close(); // #contenedor
 
 </body>
 
+
+<script type="text/javascript">
+
+ jQuery(document).ready(function($) {
+   var titulo = $('.campo .titulo');
+   titulo.click(function(){
+     var contenido = $(this).next();
+     var visible = contenido.is(':visible');
+     if( ! visible )
+     contenido.fadeIn();
+     else
+     contenido.fadeOut();
+
+     $(this).parent().siblings().find('.contenido').fadeOut();
+     
+   });
+ });
+
+
+ //var $j = jQuery.noConflict();
+
+
+</script>
+
 </html>

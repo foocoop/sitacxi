@@ -278,9 +278,6 @@ article {
     padding-top:30px;
 }
 
-article .contenido img {
-    width:100%;
-}
 
 #reader {
     position:relative;
@@ -293,7 +290,7 @@ article .contenido img {
     width:auto;
 }
 #reader #estar {
-    width:10%;
+    width:15%;
     
     left:0;
     top:15%;
@@ -305,23 +302,22 @@ article .contenido img {
     left:35%;
 }
 #reader #con {
-    top: 65%;
-    width: 10%;
-    left: 90%;
+    top: 25%;
+    width:15%;
+    left:85%;
 }
 #reader #losotros {
-    top:90%;
+    bottom:0;
     width:35%;
     left:45%;
 }
-
 #reader #reader,
-#reader #centro {
+    #reader #centro {
     
-    height:80%;
-    width:80%;
-    top:10%;
-    left:10%;
+    height:70%;
+    width:70%;
+    top:15%;
+    left:15%;
 }
 
 #reader #centro img {
@@ -348,34 +344,4 @@ article .contenido img {
 
 iframe {
     width:100%;
-}
-
-
-.campo:first-child .titulo {
-    border-top:2px dotted #ccc;
-}
-.campo .titulo {
-    padding-right:20px;
-    margin:0;
-    border-bottom:2px dotted #ccc;
-
-    line-height:14px;
-}
-
-.campo .titulo div,
-.campo .titulo p {
-    margin:0;
-    padding:0;
-}
-
-.campo .titulo:hover,
-.campo .titulo:hover > a {
-    background-color:#000;
-    color:#fff;
-
-}
-
-
-.campo .contenido {
-    display:none;
 }
