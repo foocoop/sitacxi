@@ -1,10 +1,11 @@
 <?php
 //Template Name: Dia 1
+$fecha_dia = "08/29/2013";
+
 
 
 get_header();
 
-$fecha_dia = "08/29/2013";
 
 $contenido = get_the_content();
 
@@ -52,7 +53,7 @@ if( $query->have_posts() ) {
       
     }
 
-    if($fecha == $dia ) {
+    if( strtotime($fecha) == strtotime($fecha_dia) ) {
 
       $actividades .=
       foo_li("","actividad",

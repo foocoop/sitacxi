@@ -4,16 +4,17 @@
 
 get_header();
 
-
+$fecha_dia = "08/29/2013";
 
 $contenido = get_the_content();
 
 $submenu = "";
-if( qtrans_getLanguage() == "es" ) $titulo = "Presentación";
-else if( strtolower(qtrans_getLanguage()) == "en" ) $titulo = "Statement";
 
-$link = get_permalink( $post->ID );
+if( qtrans_getLanguage() == "es" ) $titulo = "Propuesta";
+else if( strtolower(qtrans_getLanguage()) == "en" ) $titulo = "Proposal";
+$link = site_url();//get_permalink( $post->ID );
 $submenu .= foo_li("","dia", foo_link( $titulo, $link ) );
+
 $pgs = get_pages( array('child_of'=>$post->post_parent ) );
 
 foreach ( $pgs as $p ) {
@@ -25,22 +26,39 @@ foreach ( $pgs as $p ) {
 $submenu = foo_div("submenu", "", $submenu);
 
 
-$query = new WP_Query(array( 'post_type'=>'actividad','posts_per_page'=>-1 ) );
+$query = new WP_Query(array( 'post_type'=>'actividad','posts_per_page'=>-1, 'order'=>'ASC' ) );
 if( $query->have_posts() ) {
   while ( $query->have_posts() ) {
     $query->the_post();
-    $titulo = $post->post_title;
+    $titulo = foo_filter( get_the_title(), 'title');
     $link = get_permalink($post->ID);
     $fecha = get_post_meta($post->ID,'fecha');
     $fecha = $fecha[0];
     $hora_inicio = get_post_meta($post->ID,'hora_inicio');
     $hora_inicio = $hora_inicio[0];
-    
     $hora_final = get_post_meta($post->ID,'hora_final');
     $hora_final = $hora_final[0];
-    
-    if($fecha == "08/29/2013") {
-      $actividades .= foo_li("","actividad",foo_div("","fecha", date( "d \d\e F" ,$fecha ) . $hora_inicio. " - " . $hora_final ). $titulo,$link);
+    $participantes = get_post_meta($post->ID,'participantes');
+
+    $participantes = $participantes[0];
+    $participantesStr="";
+    $i = 0;
+    $l = count($participantes);
+    foreach($participantes as $p ){
+      $i++;
+      $participantesStr .= $p;
+      if( $i < $l ) $participantesStr .= ", " ;
+      $link_participante = get_page_by_title($p, OBJECT, 'invitado');
+      
+    }
+
+    if( strtotime($fecha) == strtotime($fecha_dia) ) {
+
+      $actividades .=
+      foo_li("","actividad",
+             foo_div("","hora", $hora_inicio . " - " . $hora_final )
+                    . foo_div("","titulo", $titulo . " | <em>" . $participantesStr .'</em>')
+             , $link);
     }
   }
 }
@@ -48,6 +66,7 @@ if( $query->have_posts() ) {
 
 echo $submenu;
 
+echo foo_div("fecha","", date_i18n( "F d", strtotime($fecha_dia) ) );
 echo foo_div("actividades","",$actividades);
 
 get_footer();
