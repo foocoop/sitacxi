@@ -2,8 +2,6 @@
 //Template Name: Dia 3
 $fecha_dia = "08/31/2013";
 
-
-
 get_header();
 
 
@@ -58,7 +56,8 @@ if( $query->have_posts() ) {
       $actividades .=
       foo_li("","actividad",
              foo_div("","hora", $hora_inicio . " - " . $hora_final )
-                    . foo_div("","titulo", $titulo . " | <em>" . $participantesStr .'</em>')
+                    . foo_div("","titulo", $titulo )
+                             . foo_div("","participantes", $participantesStr )
              , $link);
     }
   }

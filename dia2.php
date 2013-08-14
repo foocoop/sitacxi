@@ -1,8 +1,6 @@
 <?php
 //Template Name: Dia 2
 $fecha_dia = "08/30/2013";
-
-
 get_header();
 
 

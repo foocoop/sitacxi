@@ -492,7 +492,11 @@ iframe {
 }
 
 
+.actividad .titulo {
+    font-weight:bold;
+}
 
+.actividad .participantes,
 .actividad .participantes a {
     font-style: italic;
 }
@@ -508,8 +512,8 @@ iframe {
     
 }
 .actividad .hora {
+    font-size:11px;
     padding-bottom:10px;
-    border-bottom: 2px dotted #ccc;
 }
 .actividad .contenido {
     padding:5px 0;
