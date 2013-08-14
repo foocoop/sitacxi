@@ -20,6 +20,8 @@ foreach ( $pgs as $p ) {
 $submenu = foo_div("submenu", "", $submenu);
 
 
+
+
 $query = new WP_Query(array( 'post_type'=>'lectura','posts_per_page'=>-1 ) );
 if( $query->have_posts() ) {
   while ( $query->have_posts() ) {
@@ -39,6 +41,17 @@ if( $query->have_posts() ) {
 
 
 echo $submenu;
+
+
+if( qtrans_getLanguage() == "es" ) {
+  $subiendo = "<em>En este momento estamos subiendo los textos. Gracias por su paciencia.</em>";
+}
+else if( qtrans_getLanguage() == "en" ) {
+  $subiendo = "<em>We're currently uploading the texts. We appreciate your patience.</em>";
+}
+
+echo foo_div("","aviso",$subiendo );
+
 
 echo foo_div("lecturas","",$lecturas);
 

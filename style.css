@@ -532,3 +532,15 @@ iframe {
     font-size:11px;
     border-bottom: 2px dotted #ccc;
 }
+
+
+
+
+.aviso {
+    margin:10px;
+    padding:10px;
+    border:1px dotted #ccc;
+    border-radius:20px;
+    text-align:center;
+    color:#888;
+}
