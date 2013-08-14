@@ -1,7 +1,7 @@
 <?php
 /*
 Template Name: Educativo
-*/
+ */
 
 get_header(); ?>
 
@@ -23,7 +23,6 @@ get_header(); ?>
         $pgs = get_pages( array('child_of'=>$post->ID ) );
       }
 
-      
       $submenu = "";
       foreach ( $pgs as $p ) {
         $ttl = foo_filter( $p->post_title, 'title');;
@@ -35,5 +34,9 @@ get_header(); ?>
       
     }
   }
+  ?>
 
-get_footer(); ?>
+  
+</div>
+
+<?php get_footer(); ?>
