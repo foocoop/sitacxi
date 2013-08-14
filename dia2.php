@@ -25,36 +25,48 @@ foreach ( $pgs as $p ) {
 $submenu = foo_div("submenu", "", $submenu);
 
 
-$query = new WP_Query(array( 'post_type'=>'actividad','posts_per_page'=>-1 ) );
+$query = new WP_Query(array( 'post_type'=>'actividad','posts_per_page'=>-1, 'order'=>'ASC' ) );
 if( $query->have_posts() ) {
   while ( $query->have_posts() ) {
     $query->the_post();
-    $titulo = get_the_title();
+    $titulo = foo_filter( get_the_title(), 'title');
     $link = get_permalink($post->ID);
     $fecha = get_post_meta($post->ID,'fecha');
     $fecha = $fecha[0];
+    $fecha = date_i18n("F d", $fecha);
     $hora_inicio = get_post_meta($post->ID,'hora_inicio');
     $hora_inicio = $hora_inicio[0];
-
+    $hora_final = get_post_meta($post->ID,'hora_final');
+    $hora_final = $hora_final[0];
     $participantes = get_post_meta($post->ID,'participantes');
 
     $participantes = $participantes[0];
     $participantesStr="";
+    $i = 0;
+    $l = count($participantes);
     foreach($participantes as $p ){
-      $participantesStr .= $p . " " ;
-      $link = get_page_by_title($p, 'OBJECT', 'invitado');
+      $i++;
+      $participantesStr .= $p;
+      if( $i < $l ) $participantesStr .= ", " ;
+      $link_participante = get_page_by_title($p, OBJECT, 'invitado');
       
     }
-    $hora_final = get_post_meta($post->ID,'hora_final');
-    $hora_final = $hora_final[0];
+
     
+    setlocale(LC_ALL,"es_ES");
     if($fecha == "08/30/2013") {
-      setlocale(LC_ALL,"es_ES");
-      $actividades .= foo_li("","actividad",
-                             foo_div("","fecha", date( "F d", strtotime($fecha) ) ." ". $hora_inicio. " - " . $hora_final ) .
-                                                                        foo_div("","titulo", $titulo . " | <em>" . $participantesStr .'</em>') .
-                                                                                foo_div("","sede", "Cultural del Bosque" ),
-                             $link);
+
+      
+      $actividades .=
+      foo_li("","actividad",
+             foo_div("","fecha", $fecha
+                    ." ". $hora_inicio
+                    . " - " . $hora_final )
+                    . foo_div("","titulo", $titulo
+                             . " | <em>"
+                             . $participantesStr .'</em>')
+                             . foo_div("","sede", "Cultural del Bosque" ),
+             $link);
     }
   }
 }

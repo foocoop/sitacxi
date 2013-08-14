@@ -9,11 +9,12 @@ get_header();
 $contenido = get_the_content();
 
 $submenu = "";
-if( qtrans_getLanguage() == "es" ) $titulo = "Presentación";
-else if( strtolower(qtrans_getLanguage()) == "en" ) $titulo = "Statement";
 
-$link = get_permalink( $post->ID );
+if( qtrans_getLanguage() == "es" ) $titulo = "Propuesta";
+else if( strtolower(qtrans_getLanguage()) == "en" ) $titulo = "Proposal";
+$link = site_url();//get_permalink( $post->ID );
 $submenu .= foo_li("","dia", foo_link( $titulo, $link ) );
+
 $pgs = get_pages( array('child_of'=>$post->post_parent ) );
 
 foreach ( $pgs as $p ) {
@@ -35,7 +36,8 @@ if( $query->have_posts() ) {
     $fecha = $fecha[0];
     $hora_inicio = get_post_meta($post->ID,'hora_inicio');
     $hora_inicio = $hora_inicio[0];
-
+    $hora_final = get_post_meta($post->ID,'hora_final');
+    $hora_final = $hora_final[0];
     $participantes = get_post_meta($post->ID,'participantes');
 
     $participantes = $participantes[0];
@@ -49,24 +51,15 @@ if( $query->have_posts() ) {
       $link_participante = get_page_by_title($p, OBJECT, 'invitado');
       
     }
-    $hora_final = get_post_meta($post->ID,'hora_final');
-    $hora_final = $hora_final[0];
-    
-    if($fecha == "08/29/2013") {
-      setlocale(LC_ALL,"es_ES");
 
-      
+    if($fecha == "08/29/2013") {
+
+      $fecha = date_i18n( "F d", $fecha );
       $actividades .=
       foo_li("","actividad",
-             foo_div("","fecha",
-                     date( "F d", strtotime($fecha) )
-                                           ." ". $hora_inicio
-                                           . " - " . $hora_final )
-                                           . foo_div("","titulo", $titulo
-                                                    . " | <em>"
-                                                    . $participantesStr .'</em>')
-                                                    . foo_div("","sede", "Cultural del Bosque" ),
-             $link);
+             foo_div("","fecha", $fecha ." ". $hora_inicio . " - " . $hora_final )
+                    . foo_div("","titulo", $titulo . " | <em>" . $participantesStr .'</em>')
+             , $link);
     }
   }
 }

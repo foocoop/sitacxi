@@ -9,11 +9,6 @@ get_header();
 $contenido = get_the_content();
 
 $submenu = "";
-if( qtrans_getLanguage() == "es" ) $titulo = "Presentación";
-else if( strtolower(qtrans_getLanguage()) == "en" ) $titulo = "Statement";
-
-$link = get_permalink( $post->ID );
-$submenu .= foo_li("","dia", foo_link( $titulo, $link ) );
 $pgs = get_pages( array('child_of'=>$post->post_parent ) );
 
 foreach ( $pgs as $p ) {
