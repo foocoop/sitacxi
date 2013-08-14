@@ -81,7 +81,7 @@ footer {
 }
 
 #contenedor > div {
-    height:90%;
+    height:100%;
     display:inline-block;
     overflow:auto;
 }
