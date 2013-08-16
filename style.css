@@ -305,8 +305,8 @@ footer {
     border-bottom:2px dotted #ccc;
 }
 
-.invitado_actividades {
-    border-top:2px dotted #ccc;
+.invitado_actividad:first-child {
+    border-top:0;
 }
 
 #actividades {
