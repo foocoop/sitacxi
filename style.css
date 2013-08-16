@@ -207,7 +207,7 @@ footer {
 }
 
 #menu {
-    height:30px;
+    min-height:30px;
 }
 #menu ul {
     width:100%;
