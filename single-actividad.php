@@ -63,7 +63,7 @@ get_header(); ?>
           }
         }
         else if ( $l > 2 && $i == $l ) {
-          if( qtrans_getLanguage == "es" ) {
+          if( qtrans_getLanguage() == "es" ) {
             $txt_modera = "Modera";
 
           }
