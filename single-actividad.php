@@ -7,12 +7,12 @@ get_header(); ?>
 
   <?php
   $programaID = 15;
-  $pgs = get_pages( array('child_of'=>$programaID ) );
-  
+  $pgs = get_pages( array('child_of'=>$programaID, 'sort_order' => 'ASC',
+                          'sort_column' => 'menu_order' ) );
   $submenu = "";
 
-  if( qtrans_getLanguage() == "es" ) $titulo = "Propuesta";
-  else if( strtolower(qtrans_getLanguage()) == "en" ) $titulo = "Proposal";
+  if( qtrans_getLanguage() == "es" ) $titulo = "Presentación";
+  else if( strtolower(qtrans_getLanguage()) == "en" ) $titulo = "Presentation";
   $link = site_url();//get_permalink( $post->ID );
   $submenu .= foo_li("","dia", foo_link( $titulo, $link ) );
   
