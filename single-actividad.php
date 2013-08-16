@@ -76,7 +76,7 @@ get_header(); ?>
         
         
       }
-      $pstr = foo_h( $pstr, 4 );
+      //$pstr = foo_h( $pstr, 4 );
 
       echo foo_div("","actividad",
                    foo_div("","titulo",$titulo)
