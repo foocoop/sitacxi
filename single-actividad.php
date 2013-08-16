@@ -70,7 +70,7 @@ get_header(); ?>
           else if( qtrans_getLanguage() == "en" ) {
             $txt_modera = "Moderator";            
           }
-          $modera = foo_div("","modera",$txt_modera . ": " . $link_participante );
+          $modera = $txt_modera . ": " . $link_participante;
         }
         
         
@@ -81,6 +81,7 @@ get_header(); ?>
       echo foo_div("","actividad",
                    foo_div("","titulo",$titulo)
                           . foo_div("","participantes",$pstr)
+                                   . foo_div("","modera",$modera)
                                    . foo_div("","fecha",$fecha)
                                             . foo_div("","hora",$hora_inicio . " - " . $hora_final )
                                                      . foo_div("","contenido",$contenido)
