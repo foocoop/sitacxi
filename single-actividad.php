@@ -51,7 +51,7 @@ get_header(); ?>
 
         if( $l <= 2 ) {
           $pstr .= foo_link( $p, $link_participante );
-          if ( $i < $l - 1 ) {
+          if ( $i < $l ) {
             $pstr .= ", ";
           }
         }
@@ -62,7 +62,7 @@ get_header(); ?>
             $pstr .= ", ";
           }
         }
-        else if ( $l > 2 && $i == $l - 1 ) {
+        else if ( $l > 2 && $i == $l ) {
           if( qtrans_getLanguage == "es" ) {
             $txt_modera = "Modera";
 
