@@ -16,6 +16,8 @@ get_header(); ?>
       $invitados->the_post();
       $ttl = foo_filter( $post->post_title, 'title');;
       $url = get_permalink( $post->ID );
+      
+      /*
       $nombre = explode( " ", $ttl );
       $num_nombres = count($nombre);
       if( $num_nombres > 2 ) {
@@ -23,8 +25,9 @@ get_header(); ?>
       } else {
         $apellido = $nombre[ 1 ];
       }
-      
       $preOrden[$apellido] = foo_li("","",$ttl,$url);
+      */
+      $preOrden[$nombre] = foo_li("","",$ttl,$url);
     }
   }
 
