@@ -215,6 +215,7 @@ footer {
 #menu li {
     display: inline-block;
     width:20%;
+    min-width:60px;
     text-align:center;
     float:left;
     height:30px;
