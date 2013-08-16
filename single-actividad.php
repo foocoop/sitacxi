@@ -48,10 +48,33 @@ get_header(); ?>
         
         $qtrans = '<!--:en-->'.$p.'<!--:--><!--:es-->'.$p.'<!--:-->';
         $link_participante = get_permalink( get_page_by_title( $qtrans , OBJECT, 'invitado' ) -> ID );
-        $pstr .= foo_link( $p, $link_participante );
-        if ( $i < $l ) {
-          $pstr .= ", ";
-        }        
+
+        if( $l <= 2 ) {
+          $pstr .= foo_link( $p, $link_participante );
+          if ( $i < $l - 1 ) {
+            $pstr .= ", ";
+          }
+        }
+        else if( $l > 2  && $i < $l - 1 ) {
+          
+          $pstr .= foo_link( $p, $link_participante );
+          if ( $i < $l - 1 ) {
+            $pstr .= ", ";
+          }
+        }
+        else if ( $l > 2 && $i == $l - 1 ) {
+          if( qtrans_getLanguage == "es" ) {
+            $txt_modera = "Modera";
+
+          }
+          else if( qtrans_getLanguage() == "en" ) {
+            $txt_modera = "Moderator";            
+          }
+          $modera = foo_div("","modera",$txt_modera . ": " . $link_participante );
+        }
+        
+        
+        
       }
       $pstr = foo_h( $pstr, 4 );
 

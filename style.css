@@ -490,7 +490,9 @@ iframe {
     width:60%;
 }
 
-
+.actividad {
+    font-size:13px;
+}
 .actividad .titulo {
     font-weight:bold;
 }
@@ -509,6 +511,11 @@ iframe {
     font-weight:bold;
     font-size:11px;
     
+}
+.actividad .modera{
+    width:100%;
+    padding:5px 0;
+    display:block;
 }
 .actividad .hora {
     font-size:11px;
