@@ -498,14 +498,14 @@ iframe {
 }
 
 .actividad .participantes{
-    font-size:14px;
+    font-size:13px;
 }
 .actividad .participantes,
 .actividad .participantes a {
     font-style: italic;
 }
 
-.actividad .participantes a:hover {
+.actividad .participantes a:hover,
 .actividad .modera a:hover {
     text-decoration:underline;
 }
