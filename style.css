@@ -497,12 +497,16 @@ iframe {
     font-weight:bold;
 }
 
+.actividad .participantes{
+    font-size:14px;
+}
 .actividad .participantes,
 .actividad .participantes a {
     font-style: italic;
 }
 
 .actividad .participantes a:hover {
+.actividad .modera a:hover {
     text-decoration:underline;
 }
 .actividad .fecha {
