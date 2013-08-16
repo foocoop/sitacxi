@@ -10,7 +10,7 @@ $reader .= foo_div("losotros","",foo_img( themeDir()."/img/reader/losotros.png")
 $reader .= foo_div("centro","",foo_img( themeDir()."/img/reader/centro.png"));
 $reader .= foo_div("reader","","");
 
-echo foo_div("reader", "large-6 columns", $reader );
+echo foo_div("reader", "large-6 small-12 columns", $reader );
 
 echo foo_close(); // #contenedor
 

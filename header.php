@@ -41,21 +41,8 @@
                                     echo themeDir();
                                     ?>/scripts/gdocsviewer/jquery.gdocsviewer.js"></script>
 
-<script type="text/javascript" src="<?php
-                                    echo themeDir();
-                                    ?>/scripts/jquery.tinyscrollbar.min.js"></script>
-<!-- <script type="text/javascript" src="<?php
-echo themeDir();
-?>/scripts/jquery-scroll/jquery.scroll.min.js"></script> -->
-
-<!-- <script type="text/javascript" src="<?php
-echo themeDir();
-?>/scripts/jquery-pdfdoc/jquery-pdfdoc.js"></script> -->
 
 <body <?php body_class(); ?>>
-  <?php
-  // global $template; echo $template;
-  ?>
 <?php
 
 	
@@ -68,7 +55,7 @@ echo foo_open("contenedor","row");
 
   
   <?php
-  echo foo_open("","large-6 columns principal");
+  echo foo_open("","large-6 small-12 columns principal");
   echo foo_open("headerfijo","");
   ?>
 
