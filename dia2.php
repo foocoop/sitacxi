@@ -8,8 +8,8 @@ $contenido = get_the_content();
 
 $submenu = "";
 
-if( qtrans_getLanguage() == "es" ) $titulo = "Propuesta";
-else if( strtolower(qtrans_getLanguage()) == "en" ) $titulo = "Proposal";
+if( qtrans_getLanguage() == "es" ) $titulo = "Presentación";
+else if( strtolower(qtrans_getLanguage()) == "en" ) $titulo = "Presentation";
 $link = site_url();//get_permalink( $post->ID );
 $submenu .= foo_li("","dia", foo_link( $titulo, $link ) );
 

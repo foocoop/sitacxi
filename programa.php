@@ -14,8 +14,8 @@ $presentacion .= "29, 30 y 31 de agosto, 2013.</br>Polyforum Siqueiros Ciudad de
 $contenido = get_the_content();
 
 $submenu = "";
-if( qtrans_getLanguage() == "es" ) $titulo = "Propuesta";
-else if( strtolower(qtrans_getLanguage()) == "en" ) $titulo = "Proposal";
+if( qtrans_getLanguage() == "es" ) $titulo = "Presentación";
+else if( strtolower(qtrans_getLanguage()) == "en" ) $titulo = "Presentation";
 $link = get_permalink( $post->ID );
 $submenu .= foo_li("","dia", foo_link( $titulo, $link ) );
 $pgs = get_pages( array('child_of'=>$post->ID ) );
