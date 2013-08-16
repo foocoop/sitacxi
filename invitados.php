@@ -27,7 +27,7 @@ get_header(); ?>
       }
       $preOrden[$apellido] = foo_li("","",$ttl,$url);
       */
-      $preOrden[$nombre] = foo_li("","",$ttl,$url);
+      $preOrden[$ttl] = foo_li("","",$ttl,$url);
     }
   }
 
