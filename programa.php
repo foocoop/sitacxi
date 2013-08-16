@@ -18,7 +18,9 @@ if( qtrans_getLanguage() == "es" ) $titulo = "Presentación";
 else if( strtolower(qtrans_getLanguage()) == "en" ) $titulo = "Presentation";
 $link = get_permalink( $post->ID );
 $submenu .= foo_li("","dia", foo_link( $titulo, $link ) );
-$pgs = get_pages( array('child_of'=>$post->ID ) );
+
+$pgs = get_pages( array('child_of'=>$post->ID, 'sort_order' => 'ASC',
+                        'sort_column' => 'post_title' ) );
 
 foreach ( $pgs as $p ) {
   $ttl = foo_filter( $p->post_title, 'title');;
