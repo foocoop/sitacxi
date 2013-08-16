@@ -70,7 +70,7 @@ get_header(); ?>
           else if( qtrans_getLanguage() == "en" ) {
             $txt_modera = "Moderator";            
           }
-          $modera = $txt_modera . ": " . $link_participante;
+          $modera = $txt_modera . ": " . foo_link( $p, $link_participante);
         }
         
         
