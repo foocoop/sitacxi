@@ -20,7 +20,7 @@ $link = get_permalink( $post->ID );
 $submenu .= foo_li("","dia", foo_link( $titulo, $link ) );
 
 $pgs = get_pages( array('child_of'=>$post->ID, 'sort_order' => 'ASC',
-                        'sort_column' => 'post_title' ) );
+                        'sort_column' => 'menu_order' ) );
 
 foreach ( $pgs as $p ) {
   $ttl = foo_filter( $p->post_title, 'title');;
