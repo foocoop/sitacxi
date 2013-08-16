@@ -55,7 +55,7 @@ get_header(); ?>
             $pstr .= ", ";
           }
         }
-        else if( $l > 2  && $i < $l - 1 ) {
+        else if( $l > 2  && $i < $l ) {
           
           $pstr .= foo_link( $p, $link_participante );
           if ( $i < $l - 1 ) {
