@@ -17,7 +17,7 @@ get_header(); ?>
       $ttl = foo_filter( $post->post_title, 'title');;
       $url = get_permalink( $post->ID );
       $nombre = explode( " ", $ttl );
-      $apellido = $nombre[1];
+      $apellido = $nombre[ count($nombre)- 1 ];
       $preOrden[$apellido] = foo_li("","",$ttl,$url);     
     }
   }
