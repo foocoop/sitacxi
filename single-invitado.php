@@ -13,11 +13,16 @@ get_header();
       $invitados->the_post();
       $ttl = foo_filter( $post->post_title, 'title');;
       $url = get_permalink( $post->ID );
-      $submenu .= foo_li("","",$ttl,$url);
-      
+      $preOrden[$ttl] = foo_li("","",$ttl,$url);
     }
   }
 
+  ksort($preOrden);
+  
+  foreach($preOrden as $pO => $li ) {
+    $submenu .= $li;
+    
+  }
 
 
   echo foo_div("submenu","", foo_ul("","large-block-grid-3",$submenu) );
