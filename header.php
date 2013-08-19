@@ -23,13 +23,9 @@
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-    <!-- Set the viewport width to device width for mobile -->
-    <!-- <meta name="viewport" content="width=device-width" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"> -->
-
     <meta name="viewport" content="width=device-width">;
     
-    <!-- <title><?php wp_title(" - ",true,"right"); ?></title> -->
+    <title><?php wp_title(" - ",true,"right"); ?></title>
 
     <meta property="og:title" content="SITAC"/>
     <meta property="og:type" content="Simposio"/>
