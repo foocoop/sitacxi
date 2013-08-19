@@ -32,7 +32,7 @@
     <meta property="og:title" content="The Rock"/>
     <meta property="og:type" content="movie"/>
     
-    <meta property="og:image" content="<?php echo themeDir();  ?>/img/logo_sitac.png"/>
+    <meta property="og:image" content="<?php echo themeDir();  ?>/img/logo_sitac_meta.png"/>
     <meta property="og:site_name" content="<?php wp_title(" - ",true,"right"); ?>"/>
     
     <meta property="og:description"
