@@ -163,11 +163,14 @@ footer {
 }
 
 .principal {
-    overflow:hidden !important;
+    height:95%;
+    min-height:400px;
+    margin-bottom:0;
+    /* overflow:hidden !important; */
 }
 
 .principal #scroller {
-    height: 70%;
+    height: 100%;
     overflow:auto;
 }
 .principal #scroller .contenido,
@@ -351,12 +354,19 @@ article .contenido img {
     width:100%;
 }
 
+
 #reader {
     position:relative;
     display:inline-block;
-    height:auto;
-    overflow: hidden !important;
+    height:100%;
+    overflow: hidden !important;    
 }
+
+#reader.small-12, #reader #reader {
+    min-height:350px;
+    margin-bottom:30px;
+}
+
 #reader > div  {
     position:absolute;
     display:inline-block;
@@ -387,8 +397,20 @@ article .contenido img {
 }
 
 
+#reader.show-for-small #img {
+    max-height:450px;
+    text-align:center;
+}
+
+#reader.show-for-small #img img {
+    max-height:350px;
+    width:200px;
+    
+}
+
+
 #reader #centro {
-    height:80%;
+    
     width:80%;
     top:10%;
     left:10%;

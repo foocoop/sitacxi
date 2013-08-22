@@ -23,14 +23,14 @@
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-    <meta name="viewport" content="width=device-width">;
+    <meta name="viewport" content="width=device-width"/>
     
     <title><?php wp_title(" - ",true,"right"); ?></title>
 
     <meta property="og:title" content="SITAC"/>
-    <meta property="og:type" content="Simposio"/>
+    <meta property="og:type" content="website"/>
     
-    <meta property="og:image" content="<?php echo themeDir();  ?>/img/logo_sitac_meta.png"/>
+    <meta property="og:image" content="<?php echo themeDir();  ?>/img/logo_200.png"/>
     <meta property="og:site_name" content="<?php wp_title(" - ",true,"right"); ?>"/>
     
     <meta property="og:description"
@@ -65,7 +65,7 @@
     
     <?php
     echo foo_open("","large-6 small-12 columns principal");
-    echo foo_open("headerfijo","");
+    echo foo_open("headerfijo","show-for-medium-up");
     ?>
 
 
@@ -96,11 +96,31 @@
       <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_class' => 'left', 'container' => '', 'fallback_cb' => 'foundation_page_menu', 'walker' => new foundation_navigation() ) ); ?>
     </nav>
 
+
+
     <?php
 
     echo foo_close();
-
+   
+    
 
     echo foo_open("scroller","");
+    echo foo_open("headermovil","show-for-small");
+    $logo = foo_link( foo_img( themeDir()."/img/logo_sitac_h.png"), "");
+    echo foo_div("logo", "",$logo);
+    qtrans_generateLanguageSelectCode('text');
+
+    ?>
+
+    <nav id="menu" class="top-bar">
+      <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_class' => 'left', 'container' => '', 'fallback_cb' => 'foundation_page_menu', 'walker' => new foundation_navigation() ) ); ?>
+    </nav>
+
+
+    
+    <?php
+    
+    echo foo_close();
+
     ?>
 

@@ -10,7 +10,12 @@ $reader .= foo_div("losotros","",foo_img( themeDir()."/img/reader/losotros.png")
 $reader .= foo_div("centro","",foo_img( themeDir()."/img/reader/centro.png"));
 $reader .= foo_div("reader","","");
 
-echo foo_div("reader", "large-6 small-12 columns", $reader );
+echo foo_div("reader", "large-6 show-for-medium-up columns", $reader );
+
+$reader_small = "";
+$reader_small .= foo_div("img","",foo_img( themeDir() . "/img/reader/estar-los-unos-con-los-otros.png" ) );
+
+echo foo_div("reader", "small-12 show-for-small columns", $reader_small );
 
 echo foo_close(); // #contenedor
 
@@ -19,11 +24,11 @@ echo foo_close(); // #contenedor
 
 
 <footer id="footer" class="row">
-<?php 
-	$logos = foo_img( themeDir()."/img/logos.png");
-	$logos = foo_div("logos","",$logos);		
-	echo $logos;
-?>
+  <?php 
+  $logos = foo_img( themeDir()."/img/logos.png");
+  $logos = foo_div("logos","",$logos);		
+  echo $logos;
+  ?>
 </footer>
 
 
@@ -56,17 +61,21 @@ echo foo_close(); // #contenedor
    });
  });
 
- var setup_scroll = function(){   
-   var principal = $('.principal');
-   var header = $('.principal #headerfijo');
-   var scroller = $('.principal #scroller');
+ var setup_scroll = function()
+ {   
+  var principal = $('.principal');
+  var header = $('.principal #headerfijo');
+  var scroller = $('.principal #scroller');
 
-   var newH = principal.height() - header.height();
-   newH *= 0.95;
+  var newH = principal.height() - header.height();
+  newH *= 0.95;
 
-   scroller.height(newH);
+  if( header.is(':visible') ){
+//     scroller.height(newH);
+   }
 
- }
+  }
+ 
  var resizeTimer;
  $(window).resize(function() {
    clearTimeout(resizeTimer);

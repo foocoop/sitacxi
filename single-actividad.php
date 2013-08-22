@@ -26,9 +26,12 @@ get_header(); ?>
   
   echo $submenu;
 
+
+  
   if( have_posts() ) {
     while( have_posts() ) {
       the_post();
+
       $titulo = foo_h( foo_filter( get_the_title(), 'title'), 2);
       $contenido = foo_filter( get_the_content(), 'content');
       $participantes = get_post_meta(get_the_ID(),'participantes');     

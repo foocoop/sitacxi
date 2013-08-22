@@ -225,12 +225,11 @@ function foo_url_save($post_id) {
   
   $url = $_POST['url'];
   
-  $count = count( $participantes );
-  
   if ( $url && $url != $old )
   update_post_meta( $post_id, 'url', $url );
   elseif ( !$url && $old )
   delete_post_meta( $post_id, 'url', $old );
+  
 }
 
 
@@ -291,7 +290,7 @@ jQuery(document).ready(function( $ ){
 </thead>
 <tbody>
   <?php
-  
+  sort($arr);
   if ( $participantes ) {
     
     foreach ( $participantes as $field ) {
